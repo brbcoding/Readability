@@ -4,21 +4,12 @@ Automated Readability Index, Flesch-Kincaid, Gunning-Fog, SMOG Index, Coleman-Li
 
 Examples
 ========
-<<<<<<< HEAD
- Automated Readability Index  
+Automated Readability Index  
     ```automatedReadability("I immediately regret this decision.");
     Characters: 30
     Words: 5
     Sentences: 1
     Automated Readability Index: 9.329999999999998```
-=======
-Automated Readability Index  
-    `automatedReadability("I immediately regret this decision.");
-    Characters: 30
-    Words: 5
-    Sentences: 1
-    Automated Readability Index: 9.329999999999998`
->>>>>>> 091792330a53c42a02c883da1b737568abaae112
 Flesch Kincaid Ease  
     ```fleschKincaidEase("I’ll have a Manhattan. And kick the vermouth to the side with a pair of steel-toed boots.");
     Total Words: 17
@@ -47,8 +38,5 @@ Coleman-Liau Index
     Total Characters: 86
     Total Words: 20
     Total Sentences: 1
-<<<<<<< HEAD
     Coleman Liau Index: 9.511999999999997```
-=======
-    Coleman Liau Index: 9.511999999999997
->>>>>>> 091792330a53c42a02c883da1b737568abaae112
+
