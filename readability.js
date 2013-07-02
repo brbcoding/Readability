@@ -38,6 +38,10 @@ var fleschKincaidEase = function(input) {
 		syllCount += countSyllables(words[i]);
     }
     var fkeResult = 206.835 - 1.015 * (wordCount / sentCount) - 84.6 * (syllCount / wordCount);
+    console.log("Total Words: " + wordCount);
+    console.log("Total Sentences: " + sentCount);
+    console.log("Total Syllables: " + syllCount);
+    console.log("Flesch Kincaid Reading Ease: " + fkeResult);
     return fkeResult;
 };
 
@@ -52,6 +56,10 @@ var fleschKincaidGradeLevel = function(input) {
 		syllCount += countSyllables(words[i]);
     }
     var fkgResult = 0.39 * (wordCount / sentCount) + 11.8 * (syllCount / wordCount) - 15.59;
+    console.log("Total Words: " + wordCount);
+    console.log("Total Sentences: " + sentCount);
+    console.log("Total Syllables: " + syllCount);
+    console.log("Flesch Kincaid Grade Level: " + fkgResult);
     return fkgResult;
 
 };
@@ -69,6 +77,10 @@ var gunningFog = function(input) {
 		}
     }
     var gfsResult = 0.4 * ((wordCount/sentCount) + 100 * (compWords/wordCount));
+    console.log("Total Words: " + wordCount);
+    console.log("Total Sentences: " + sentCount);
+    console.log("Total Complex Words: " + compWords);
+    console.log("Gunning Fog Score: " + gfsResult);
     return gfsResult;
 
 };
@@ -84,8 +96,12 @@ var smogIndex = function(input) {
 		}
     }
     var smgResult = 1.0430 * Math.sqrt(polyWords * (30/sentCount) + 3.1291);
+    console.log("Number of Sentences: " + sentCount);
+    console.log("Polysyllabic Words: " + polyWords);
+    console.log("SMOG index: " + smgResult);
     return smgResult;
 };
+
 // Coleman-Liau Index
 var colemanLiau = function(input) {
 	// 5.89 x (characters/words) - 0.3 x (sentences/words) - 15.8
@@ -93,5 +109,11 @@ var colemanLiau = function(input) {
 	var wordCount = input.match(WORD_REGEX).length;
 	var sentCount = input.match(SENT_REGEX).length;
 	var cliResult = 5.89 * (charCount / wordCount) - 0.3 * (sentCount / wordCount) - 15.8;
+	console.log("Total Characters: " + charCount);
+	console.log("Total Words: " + wordCount);
+	console.log("Total Sentences: " + sentCount);
+	console.log("Coleman Liau Index: " + cliResult);
 	return cliResult;
 };
+
+fleschKincaidGradeLevel("Hello, world!");
