@@ -10,7 +10,8 @@ automatedReadability("I immediately regret this decision.");
 Characters: 30
 Words: 5
 Sentences: 1
-Automated Readability Index: 9.329999999999998```
+Automated Readability Index: 9.329999999999998
+```
 
 **Flesch Kincaid Ease**  
 ``` javascript
