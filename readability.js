@@ -59,6 +59,18 @@ var fleschKincaidGradeLevel = function(input) {
 // Gunning Fog Index
 var gunningFog = function(input) {
 	// 0.4[(words/sentences) + 100(complex words/words)]
+	var compWords = 0;
+	var words = input.replace(/[^\w\s]/ig, "").split(" ");
+	var wordCount = words.length;
+	var sentCount = input.match(SENT_REGEX).length;
+	for(i = 0; i < words.length; i++){
+		if(countSyllables(words[i]) >= 3) {
+			compWords += 1;
+		}
+    }
+    var gfsResult = 0.4 * ((wordCount/sentCount) + 100 * (compWords/wordCount));
+    return gfsResult;
+
 };
 // SMOG Index
 var smogIndex = function(input) {
@@ -83,5 +95,3 @@ var colemanLiau = function(input) {
 	var cliResult = 5.89 * (charCount / wordCount) - 0.3 * (sentCount / wordCount) - 15.8;
 	return cliResult;
 };
-
-console.log(smogIndex("Hello there world, how are you doing today??? Fine!"));
