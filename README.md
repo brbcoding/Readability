@@ -4,12 +4,12 @@ Automated Readability Index, Flesch-Kincaid, Gunning-Fog, SMOG Index, Coleman-Li
 
 Examples
 ========
- Automated Readability Index  
-    automatedReadability("I immediately regret this decision.");
+Automated Readability Index  
+    `automatedReadability("I immediately regret this decision.");
     Characters: 30
     Words: 5
     Sentences: 1
-    Automated Readability Index: 9.329999999999998
+    Automated Readability Index: 9.329999999999998`
 Flesch Kincaid Ease  
     fleschKincaidEase("I’ll have a Manhattan. And kick the vermouth to the side with a pair of steel-toed boots.");
     Total Words: 17
