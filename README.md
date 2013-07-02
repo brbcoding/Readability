@@ -19,7 +19,8 @@ fleschKincaidEase("I’ll have a Manhattan. And kick the vermouth to the side wi
 Total Words: 17
 Total Sentences: 2
 Total Syllables: 21
-Flesch Kincaid Reading Ease: 93.70161764705884```
+Flesch Kincaid Reading Ease: 93.70161764705884
+```
 
 **Flesch Kincaid Grade Level**  
 ``` javascript
@@ -27,7 +28,8 @@ fleschKincaidGradeLevel("He had a voice that could make a wolverine purr and sui
 Total Words: 21
 Total Sentences: 1
 Total Syllables: 26
-Flesch Kincaid Grade Level: 7.209523809523812```
+Flesch Kincaid Grade Level: 7.209523809523812
+```
 
 **Gunning Fog Score**  
 ``` javascript
@@ -35,14 +37,16 @@ gunningFog("I love scotch. Scotchy scotch scotch. Here it goes down, down into m
 Total Words: 14
 Total Sentences: 3
 Total Complex Words: 0
-Gunning Fog Score: 1.866666666666667```    
+Gunning Fog Score: 1.866666666666667
+```    
 
 **SMOG Index**  
 ``` javascript
 smogIndex("Oh, I can barely lift my right arm ’cause I did so many. I don’t know if you heard me counting. I did over a thousand.");
 Number of Sentences: 3
 Polysyllabic Words: 1
-SMOG index: 3.7792166259557014```
+SMOG index: 3.7792166259557014
+```
 
 **Coleman-Liau Index**  
 ``` javascript
@@ -50,4 +54,5 @@ colemanLiau("Discovered by the Germans in 1904, they named it San Diego, which o
 Total Characters: 86
 Total Words: 20
 Total Sentences: 1
-Coleman Liau Index: 9.511999999999997```
+Coleman Liau Index: 9.511999999999997
+```
