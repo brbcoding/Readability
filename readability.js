@@ -116,9 +116,9 @@ var colemanLiau = function(input) {
 	return cliResult;
 };
 
-automatedReadability("I immediately regret this decision.");
-fleschKincaidEase("I’ll have a Manhattan. And kick the vermouth to the side with a pair of steel-toed boots.");
-fleschKincaidGradeLevel("He had a voice that could make a wolverine purr and suits so fine they made Sinatra look like a hobo.");
-gunningFog("I love scotch. Scotchy scotch scotch. Here it goes down, down into my belly.");
-smogIndex("Oh, I can barely lift my right arm ’cause I did so many. I don’t know if you heard me counting. I did over a thousand.");
-colemanLiau("Discovered by the Germans in 1904, they named it San Diego, which of course in German means ‘a whale’s vagina.");
+// automatedReadability("I immediately regret this decision.");
+// fleschKincaidEase("I’ll have a Manhattan. And kick the vermouth to the side with a pair of steel-toed boots.");
+fleschKincaidGradeLevel("Timmy's costume unboxing event is now LIVE! Join us in chat & get the chance to win mystery prizes");
+// gunningFog("I love scotch. Scotchy scotch scotch. Here it goes down, down into my belly.");
+// smogIndex("Oh, I can barely lift my right arm ’cause I did so many. I don’t know if you heard me counting. I did over a thousand.");
+// colemanLiau("Discovered by the Germans in 1904, they named it San Diego, which of course in German means ‘a whale’s vagina.");
