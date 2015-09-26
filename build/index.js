@@ -1,12 +1,9 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
 var Readability = {
   getSyllableCount: function getSyllableCount(input) {
     // lol @ this, obviously not 100%
-    return input.split(' ').reduce(function (a, b) {
+    return input.trim().split(' ').reduce(function (a, b) {
       return a + (b.length <= 3 ? 1 : b.toLowerCase().replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '').replace(/^y/, '').match(/[aeiouy]{1,2}/g).length);
     }, 0);
   },
@@ -26,15 +23,15 @@ var Readability = {
       return a + (_this.getSyllableCount(b) >= 3 ? 1 : 0);
     }, 0);
   },
-  automatedReadabilityIndex: function automatedReadabilityIndex(input) {
+  automatedReadability: function automatedReadability(input) {
     // 4.71(characters / words) + 0.5(words / sentences) - 21.43
     var nChar = this.getCharacterCount(input);
     var nWord = this.getWordCount(input);
     var nSent = this.getSentenceCount(input);
-
-    return 4.71 * (nChar / nWord) + 0.5 * (nWord / nSent) - 21.43;
+    var arIdx = 4.71 * (nChar / nWord) + 0.5 * (nWord / nSent) - 21.43;
+    return arIdx > 0 ? arIdx : 0;
   },
-  SMOGIndex: function SMOGIndex(input) {
+  smog: function smog(input) {
     // 1.0430 * sqrt(num polysyllables * (30/number of sentences) + 3.1291)
     var nSent = this.getSentenceCount(input);
     var nComp = this.getComplexWords(input);
@@ -47,7 +44,7 @@ var Readability = {
     var nSent = this.getSentenceCount(input);
     var nComp = this.getComplexWords(input);
 
-    return 0.4 * (nWord / nSent + 100 * (nComp / nWord));
+    return 0.4 * (nWord / nSent) + 100 * (nComp / nWord);
   },
   colemanLiau: function colemanLiau(input) {
     // 5.89 x (characters/words) - 0.3 x (sentences/words) - 15.8
@@ -70,6 +67,3 @@ var Readability = {
     };
   }
 };
-
-exports['default'] = Readability;
-module.exports = exports['default'];

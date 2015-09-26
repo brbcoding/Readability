@@ -8,12 +8,12 @@ Automated Readability Index, Flesch-Kincaid, Gunning-Fog, SMOG Index, Coleman-Li
 ```
 #### [Automated Readability Index](https://en.wikipedia.org/wiki/Automated_readability_index)
 ```
-> Readability.automatedReadabilityIndex(testPhrase);
+> Readability.automatedReadability(testPhrase);
 11.274285714285718
 ```
 #### [SMOG Index](https://en.wikipedia.org/wiki/SMOG)
 ```
-> Readability.SMOGIndex(testPhrase);
+> Readability.smog(testPhrase);
 10.065306667255596
 ```
 #### [Gunning Fog](https://en.wikipedia.org/wiki/Gunning_fog_index)

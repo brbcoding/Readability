@@ -1,7 +1,7 @@
 const Readability = {
   getSyllableCount(input) {
     // lol @ this, obviously not 100%
-    return input.split(' ').reduce((a, b) => {
+    return input.trim().split(' ').reduce((a, b) => {
       return a + (b.length <= 3 ? 1 : b.toLowerCase().replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '')
         .replace(/^y/, '').match(/[aeiouy]{1,2}/g).length);
     }, 0);
@@ -20,15 +20,15 @@ const Readability = {
       return a + (this.getSyllableCount(b) >= 3 ? 1 : 0);
     }, 0);
   },
-  automatedReadabilityIndex(input) {
+  automatedReadability(input) {
     // 4.71(characters / words) + 0.5(words / sentences) - 21.43
     const nChar = this.getCharacterCount(input);
     const nWord = this.getWordCount(input);
     const nSent = this.getSentenceCount(input);
-
-    return ((4.71 * (nChar / nWord)) + (0.5 * (nWord / nSent))) - 21.43;
+    const arIdx = 4.71 * (nChar / nWord) + 0.5 * (nWord / nSent) - 21.43;
+    return arIdx > 0 ? arIdx : 0;
   },
-  SMOGIndex(input) {
+  smog(input) {
     // 1.0430 * sqrt(num polysyllables * (30/number of sentences) + 3.1291)
     const nSent = this.getSentenceCount(input);
     const nComp = this.getComplexWords(input);
@@ -41,7 +41,7 @@ const Readability = {
     const nSent = this.getSentenceCount(input);
     const nComp = this.getComplexWords(input);
 
-    return 0.4 * ((nWord / nSent) + 100 * (nComp / nWord));
+    return 0.4 * (nWord / nSent) + 100 * (nComp / nWord);
   },
   colemanLiau(input) {
     // 5.89 x (characters/words) - 0.3 x (sentences/words) - 15.8
@@ -64,5 +64,3 @@ const Readability = {
     }
   },
 };
-
-export default Readability;

@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.6",
     "path": "^0.12.7"
   },
   "scripts": {
