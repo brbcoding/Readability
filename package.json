@@ -1,0 +1,30 @@
+{
+  "name": "readability",
+  "version": "0.0.1",
+  "description": "Automated Readability Index, Flesch-Kincaid, Gunning-Fog, SMOG Index, Coleman-Liau",
+  "main": "./build/index.js",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-rename": "^1.2.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "gulp-rename": "^1.2.2",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brbcoding/Readability.git"
+  },
+  "author": "Cody Henshaw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brbcoding/Readability/issues"
+  },
+  "homepage": "https://github.com/brbcoding/Readability#readme"
+}
