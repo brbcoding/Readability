@@ -39,6 +39,10 @@
         margin-bottom: 0.75em;
       }
 
+      .output-container:hover > .output-value {
+        color: #2BA4FF;
+      }
+
       .output-label, .output-value {
         display: inline-block;
         width: 50%;
@@ -52,6 +56,32 @@
       .output-label {
         font-style: italic;
         font-family: 'Cardo', italic;
+      }
+
+      .output-label a {
+        color: #000;
+        text-decoration: none;
+        position: relative;
+        width: auto;
+      }
+
+      .output-label a:hover {
+        color: #2BA4FF;
+      }
+
+      .output-label a:after {
+        content: '';
+        position: absolute;
+        background: #2BA4FF;
+        width: 0;
+        left: 0;
+        height: 0.1em;
+        bottom: 0.2em;
+      }
+
+      .output-label a:hover:after {
+        transition: width 0.25s ease-in;
+        width: 100%;
       }
 
       .output-value {
@@ -84,26 +114,32 @@
           {
             name: 'Automated Readability Index',
             func: 'automatedReadability',
+            url: 'https://en.wikipedia.org/wiki/Automated_readability_index'
           },
           {
             name: 'SMOG Grade (Index)',
-            func: 'smog'
+            func: 'smog',
+            url: 'https://en.wikipedia.org/wiki/SMOG'
           },
           {
             name: 'Gunning Fog Index',
-            func: 'gunningFog'
+            func: 'gunningFog',
+            url: 'https://en.wikipedia.org/wiki/Gunning_fog_index'
           },
           {
             name: 'Coleman Liau',
-            func: 'colemanLiau'
+            func: 'colemanLiau',
+            url: 'https://en.wikipedia.org/wiki/Coleman%E2%80%93Liau_index'
           },
           {
             name: 'Flesch-Kincaid Ease',
-            func: 'fleschKincaid.ease'
+            func: 'fleschKincaid.ease',
+            url: 'https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests'
           },
           {
             name: 'Flesch-Kincaid Level',
-            func: 'fleschKincaid.gradeLevel'
+            func: 'fleschKincaid.gradeLevel',
+            url: 'https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests'
           }
         ];
       }
@@ -124,13 +160,18 @@
 
           outputLabel = document.createElement('div');
           outputValue = document.createElement('div');
+          outputLink  = document.createElement('a');
+          outputContainer = document.createElement('div');
           outputLabel.classList.add('output-label');
           outputValue.classList.add('output-value');
-          outputLabel.innerHTML = method.name;
+          outputContainer.classList.add('output-container');
+
+          outputLink.innerHTML = method.name;
+          outputLink.setAttribute('href', method.url);
+          outputLink.setAttribute('target', '_blank');
           outputValue.innerHTML = val;
 
-          outputContainer = document.createElement('div');
-          outputContainer.classList.add('output-container');
+          outputLabel.appendChild(outputLink);
           outputContainer.appendChild(outputLabel);
           outputContainer.appendChild(outputValue);
           fragment.appendChild(outputContainer);
